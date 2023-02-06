@@ -1,6 +1,4 @@
 import NewApiService from './service-gallery';
-import Notiflix from 'notiflix';
-// import loadMoreBtn from './loadMoreBtn';
 import LoadMoreBtn from './loadMoreBtn';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
@@ -10,7 +8,6 @@ var lightbox = new SimpleLightbox('.gallery-link');
 const refs = {
   searchInput: document.querySelector('input[name="searchQuery"]'),
   searchForm: document.querySelector('.search-form'),
-  // loadMoreBtn: document.querySelector('.load-more'),
   galleryBox: document.querySelector('.gallery'),
 };
 
@@ -26,10 +23,7 @@ loadMoreBtn.refs.button.addEventListener('click', onPageWithGalerry);
 function onSearch(evt) {
   evt.preventDefault();
 
-  const a = refs.searchInput.value;
-
   clearContainer();
-  // newApiService.namePic = evt.currentTarget.elements.namePic.value;
   newApiService.resetPage();
   onPageWithGalerry();
 }
@@ -53,7 +47,7 @@ function markupGallery(hits) {
     .map(
       hit =>
         `<div class="photo-card">
-  <a href="${hit.largeImageURL}" class="gallery-link"><img src="${hit.webformatURL}" alt="${hit.tags}" loading="lazy" /></a>
+  <a href="${hit.largeImageURL}" class="gallery-link"><img class="pic" src="${hit.webformatURL}" alt="${hit.tags}" width="340" loading="lazy" /></a>
   <div class="info">
     <p class="info-item">${hit.likes}
       <b>Likes</b>

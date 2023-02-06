@@ -29,4 +29,29 @@
 
 .is-hidden {
   display: none;
-} 
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(73, 18, 212);
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.photo-card {
+  flex-basis: calc((100% - 3 * 10px) / 4);
+}
+
+.pic {
+  width: 340px;
+  height: 225px;
+}
